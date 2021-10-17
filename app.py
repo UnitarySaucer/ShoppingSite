@@ -2,6 +2,9 @@ from flask import Flask
 from flask_restful import Api
 from flask_migrate import Migrate
 from models.db import db
+from models.user import User
+from models.product import Product
+from models.review import Review
 
 app = Flask(__name__)
 
