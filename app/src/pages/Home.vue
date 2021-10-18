@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import Products from './components/Products.vue'
+import Products from '../components/Products.vue'
 
 export default {
-  name: 'App',
+  name: 'Home',
   components: {
     Products
   }
