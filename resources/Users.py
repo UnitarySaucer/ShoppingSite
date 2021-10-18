@@ -2,6 +2,7 @@ from flask_restful import Resource
 from flask import request
 from models.user import User
 from models.db import db
+from sqlalchemy.orm import joinedload
 
 
 class UserList(Resource):
@@ -13,8 +14,10 @@ class UserList(Resource):
 
 class IndividualUser(Resource):
     def get(self, id):
-        data = User.find_by_id(id)
-        return data.json(), 201
+        user = User.query.options(joinedload(
+            'reviews')).filter_by(id=id).first()
+        reviews = [t.json() for t in user.reviews]
+        return {**user.json(), "reviews": reviews}
 
     def delete(self, id):
         user = User.find_by_id(id)
