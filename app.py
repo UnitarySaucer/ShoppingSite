@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_restful import Api
 from flask_migrate import Migrate
+from flask_cors import CORS
 from models.db import db
 from models.user import User
 from models.product import Product
@@ -17,6 +18,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost:5432/shopping_db
 app.config['SQLALCHEMY_ECHO'] = True
 
 db.init_app(app)
+
+CORS(app)
 
 api = Api(app)
 migrate = Migrate(app, db)
