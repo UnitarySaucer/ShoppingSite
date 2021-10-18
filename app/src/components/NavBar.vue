@@ -14,7 +14,7 @@
 
 <script>
 export default {
-
+  name: 'NavBar'
 }
 </script>
 
@@ -24,7 +24,7 @@ export default {
 li, a {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
-  font-size: 36px;
+  font-size: 2.25rem;
   color: black;
   text-decoration: none;
 }
@@ -33,16 +33,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10%;
+  padding: 1.875rem 10%;
   background: #C4C4C4;
-  height: 80px;
+  height: 5rem;
 }
 
 .title{
   cursor: pointer;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
-  font-size: 36px;
+  font-size: 2.25rem;
 }
 
 .nav_links {
@@ -51,7 +51,7 @@ header {
 
 .nav_links li {
   display: inline-block;
-  padding: 0 20px;
+  padding: 0 1.25rem;
 }
 .nav_links li a, h1{
   transition: all 0.3s ease 0s;
