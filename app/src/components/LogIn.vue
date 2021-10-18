@@ -1,6 +1,7 @@
 <template>
     <form class="login" @submit.prevent="handleSubmit">
       <div>
+        <h3>Log In</h3>
         <label>Username:</label>
         <input type="text" placeholder="Username" v-model="username" />
         <label>Password:</label>
@@ -27,6 +28,8 @@ export default {
         password: this.password
       })
       localStorage.setItem('token', res.data.token)
+      this.username = ''
+      this.password = ''
     }
   }
 }
