@@ -8,7 +8,7 @@ class Login(Resource):
     def post(self):
         data = request.get_json()
         try:
-            user = User.find_user(username=data['username']).json()
+            user = User.find_user(data['username']).json()
             check_pw = compare_password(
                 data['password'], user['password_digest'])
             if check_pw:
