@@ -20,3 +20,20 @@ class Product(db.Model):
         self.name = name
         self.price = price
         self.description = description
+
+    def json(self):
+        return {"id": self.id, "name": self.name, "price": self.price, "description": self.description, "created_at": str(self.created_at), "updated_at": str(self.updated_at)}
+
+    def create(self):
+        db.session.add(self)
+        db.session.commit()
+        return self
+
+    @classmethod
+    def find_all(cls):
+        return Product.query.all()
+
+    @classmethod
+    def find_by_id(cls, product_id):
+        user = Product.query.filter_by(id=product_id).first()
+        return user
