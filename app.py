@@ -5,6 +5,7 @@ from models.db import db
 from models.user import User
 from models.product import Product
 from models.review import Review
+from resources.auth import Login, Register
 
 app = Flask(__name__)
 
@@ -16,6 +17,9 @@ db.init_app(app)
 
 api = Api(app)
 migrate = Migrate(app, db)
+
+api.add_resource(Login, '/auth/login')
+api.add_resource(Register, '/auth/register')
 
 if __name__ == '__main__':
     app.run(debug=True)
