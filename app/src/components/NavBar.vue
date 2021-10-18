@@ -3,9 +3,9 @@
     <h1 class="title">Shopping Site</h1>
     <nav>
       <ul class="nav_links">
-        <li><a href="#">Home</a></li>
+        <router-link to='/'>Home</router-link>
         <li><a href="#">About</a></li>
-        <li><a href="#">Log In/Register</a></li>
+        <router-link to='/login-reg'>LogIn/Register</router-link>
       </ul>
     </nav>
   </header>
