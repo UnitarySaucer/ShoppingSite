@@ -1,7 +1,7 @@
 <template>
   <div class="product-box">
     <div class="product" v-for="product in products" :key="product.id" >
-      <p>{{product.name}}</p>
+      <router-link :to="'/product/' + product.id" >{{product.name}}</router-link>
       <p>${{product.price}}</p>
     </div>
   </div>
