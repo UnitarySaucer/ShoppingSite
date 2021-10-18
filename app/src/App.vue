@@ -1,21 +1,16 @@
 <template>
   <div id="app">
     <NavBar/>
-    <div class="box">
-      <Products/>
-    </div>
   </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue'
-import Products from './components/Products.vue'
 
 export default {
   name: 'App',
   components: {
-    NavBar,
-    Products
+    NavBar
   }
 }
 </script>
@@ -29,10 +24,4 @@ export default {
   font-weight: 400;
 }
 
-.box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-}
 </style>
