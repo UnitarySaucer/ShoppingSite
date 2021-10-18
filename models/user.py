@@ -14,7 +14,7 @@ class User(db.Model):
     ), nullable=False, onupdate=datetime.utcnow)
 
     reviews = db.relationship("Review", cascade='all',
-                              backref=db.backref('reviews', lazy=True))
+                              backref=db.backref('review', lazy=True))
 
     def __init__(self, username, email, password_digest):
         self.username = username
@@ -36,4 +36,9 @@ class User(db.Model):
     @classmethod
     def find_by_id(cls, user_id):
         user = User.query.filter_by(id=user_id).first()
+        return user
+
+    @classmethod
+    def find_user(cls, user_username):
+        user = User.query.filer_by(username=user_username).first()
         return user
