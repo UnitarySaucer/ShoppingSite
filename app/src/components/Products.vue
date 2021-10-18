@@ -29,6 +29,14 @@ export default {
 </script>
 
 <style>
+.product-box {
+  width: 111.188rem;
+  height: 53.063rem;
+  background-color: #C4C4C4;
+}
 
+.product {
+  padding: 2rem;
+}
 
 </style>
