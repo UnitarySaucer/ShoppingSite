@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <NavBar/>
-    <Products/>
+    <div class="box">
+      <Products/>
+    </div>
   </div>
 </template>
 
@@ -25,5 +27,12 @@ export default {
   padding: 0;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
 }
 </style>
