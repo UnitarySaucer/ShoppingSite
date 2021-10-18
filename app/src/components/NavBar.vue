@@ -3,7 +3,6 @@
     <h1 class="title">Shopping Site</h1>
     <nav>
       <ul class="nav_links">
-        <!-- <li class="nav-text site-name"><a href="#">Shopping Site</a></li> -->
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Log In/Register</a></li>
