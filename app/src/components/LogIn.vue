@@ -28,6 +28,8 @@ export default {
         password: this.password
       })
       localStorage.setItem('token', res.data.token)
+      localStorage.setItem('user', res.data.user.id)
+      console.log(res)
       this.username = ''
       this.password = ''
     }
