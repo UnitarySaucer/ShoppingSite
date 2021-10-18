@@ -13,6 +13,9 @@ class User(db.Model):
     updated_at = db.Column(db.DateTime, default=datetime.utcnow(
     ), nullable=False, onupdate=datetime.utcnow)
 
+    reviews = db.relationship("Review", cascade='all',
+                              backref=db.backref('reviews', lazy=True))
+
     def __init__(self, username, email, password_digest):
         self.username = username
         self.email = email

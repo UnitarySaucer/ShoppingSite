@@ -11,6 +11,7 @@ class Review(db.Model):
     content = db.Column(db.String(255), nullable=False)
     product_id = db.Column(db.Integer, db.ForeignKey(
         'products.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     created_at = db.Column(
         db.DateTime, default=datetime.utcnow, nullable=False)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow(
@@ -18,6 +19,8 @@ class Review(db.Model):
 
     product = db.relationship(
         "Product", backref=db.backref('products', lazy=True))
+    user = db.relationship(
+        "User", backref=db.backref('users', lazy=True))
 
     def __init__(self, title, content):
         self.title = title
