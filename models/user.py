@@ -40,5 +40,5 @@ class User(db.Model):
 
     @classmethod
     def find_user(cls, user_username):
-        user = User.query.filer_by(username=user_username).first()
+        user = User.query.filter_by(username=user_username).first()
         return user
